@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: navy; 
+    background-color: navy; /* Menggunakan kata warna Navy */
     color: white;
     text-align: center;
     margin: 0;
@@ -41,7 +41,7 @@ body {
     width: 300px;
     margin: 20px auto;
     padding: 15px;
-    background-color: blue; 
+    background-color: blue; /* Menggunakan kata warna Biru */
 }
 
 .btn-game {
@@ -53,6 +53,5 @@ body {
     border-radius: 3px;
     font-weight: bold;
 }
-
 .btn-minum { background-color: dodgerblue; color: white; }
 .btn-istirahat { background-color: orangered; color: white; }
