@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydration Hero</title>
-    <!-- Memanggil gaya tampilan dari style.css -->
+   
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SUARA ALARM OTOMATIS -->
+
     <audio id="suara-alarm" src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/sounds/bell_ring.mp3" preload="auto" loop></audio>
 
-    <!-- 1. LAYAR BELAJAR -->
+
     <div id="layar-belajar">
         <h1>Mode Belajar Aktif 📖</h1>
         <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
@@ -20,7 +20,7 @@
         <button class="btn-belajar" onclick="munculkanGame()">Simulasi Waktu Habis ⏱️</button>
     </div>
 
-    <!-- 2. LAYAR GAME -->
+ 
     <div id="layar-game">
         <h1 style="color: red;">⚠️ PAHLAWANMU LEMAS! ⚠️</h1>
         <p>Sudah waktunya minum dan istirahat agar pahlawanmu pulih.</p>
@@ -33,11 +33,11 @@
 
         <p>Pilih tindakanmu:</p>
         <button class="btn-game btn-minum" onclick="pilihTindakan('minum')">🥤 Minum Air (+40 HP)</button>
-        <!-- Di bawah ini kodenya sudah diperbaiki dari pilledTindakan menjadi pilihTindakan -->
+      
         <button class="btn-game btn-istirahat" onclick="pilihTindakan('istirahat')">🛋️ Istirahat (+40 HP)</button>
     </div>
 
-    <!-- LOGIKA JAVASCRIPT -->
+
     <script>
         let hp = 20; 
         const waktuTunggu = 30 * 60 * 1000; 
