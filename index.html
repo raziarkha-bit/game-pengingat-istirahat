@@ -8,14 +8,14 @@
        
         body {
             font-family: 'Courier New', Courier, monospace; 
-            background-color: navy; 
+            background-color: darkslategray;
             color: white; 
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
-       
+  
         #layar-belajar {
             padding: 100px 20px;
         }
@@ -23,7 +23,7 @@
         .btn-belajar {
             padding: 15px 30px;
             font-size: 18px;
-            background-color: green; 
+            background-color: green;
             color: white;
             border: none;
             cursor: pointer;
@@ -31,7 +31,7 @@
             font-weight: bold;
         }
 
-       
+    
         #layar-game {
             display: none; 
             position: fixed;
@@ -39,21 +39,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: black;
+            background-color: black; 
             padding-top: 100px;
             z-index: 999;
         }
 
-        
+     
         .status-box {
             border: 3px solid white;
             width: 300px;
             margin: 20px auto;
             padding: 15px;
-            background-color: blue; 
+            background-color: darkcyan;
         }
 
-       
+      
         .btn-game {
             padding: 10px 20px;
             font-size: 16px;
@@ -69,9 +69,6 @@
 </head>
 <body>
 
- 
-    
-   <audio id="suaraku" src="suaraku.mp3" preload="auto" loop></audio>
     <div id="layar-belajar">
         <h1>Mode Belajar Aktif 📖</h1>
         <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
@@ -79,7 +76,6 @@
         <button class="btn-belajar" onclick="munculkanGame()">Simulasi Waktu Habis ⏱️</button>
     </div>
 
-  
     <div id="layar-game">
         <h1 style="color: red;">⚠️ PAHLAWANMU LEMAS! ⚠️</h1>
         <p>Sudah waktunya minum dan istirahat agar pahlawanmu pulih.</p>
@@ -95,7 +91,6 @@
         <button class="btn-game btn-istirahat" onclick="pilihTindakan('istirahat')">🛋️ Istirahat (+40 HP)</button>
     </div>
 
-   
     <script>
         let hp = 20; 
         const waktuTunggu = 30 * 60 * 1000; 
@@ -118,13 +113,21 @@
                     body: "Pahlawanmu Lemas! Waktunya minum air dan istirahat sejenak.",
                     icon: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4a7.png"
                 });
-            
+            }
 
-            let lagu = document.getElementById("suaraku");
-    lagu.play();;
+            playBeepSound();
         }
 
-       
+        function playBeepSound() {
+            let context = new (window.AudioContext || window.webkitAudioContext)();
+            let osc = context.createOscillator();
+            osc.type = "sine";
+            osc.frequency.value = 600; 
+            osc.connect(context.destination);
+            osc.start();
+            setTimeout(() => osc.stop(), 300); 
+        }
+
         setInterval(munculkanGame, waktuTunggu);
 
         function pilihTindakan(aksi) {
