@@ -124,16 +124,7 @@
     lagu.play();;
         }
 
-        function playBeepSound() {
-            let context = new (window.AudioContext || window.webkitAudioContext)();
-            let osc = context.createOscillator();
-            osc.type = "sine";
-            osc.frequency.value = 600; 
-            osc.connect(context.destination);
-            osc.start();
-            setTimeout(() => osc.stop(), 300); 
-        }
-
+       
         setInterval(munculkanGame, waktuTunggu);
 
         function pilihTindakan(aksi) {
