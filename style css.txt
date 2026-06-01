@@ -1,6 +1,8 @@
+/* GAYA RETRO RPG DENGAN BACKGROUND NAVY, HITAM, & BIRU */
+
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: navy; /* Latar belakang halaman utama: Navy */
+    background-color: navy; /* 1. Latar belakang halaman utama: Navy */
     color: white;
     text-align: center;
     margin: 0;
@@ -29,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black; /* Hitam pekat saat pahlawan lemas */
+    background-color: black; /* 2. Layar penuh tertutup Hitam saat lemas */
     padding-top: 100px;
     z-index: 999;
 }
@@ -39,7 +41,7 @@ body {
     width: 300px;
     margin: 20px auto;
     padding: 15px;
-    background-color: blue; /* Kotak status karakter: Biru */
+    background-color: blue; /* 3. Kotak status pahlawan: Biru */
 }
 
 .btn-game {
