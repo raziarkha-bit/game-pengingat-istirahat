@@ -3,40 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Hydration Hero</title>
-    
-    <!-- BARIS INI UNTUK MEMANGGIL FILE STYLE.CSS YANG DI ATAS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- LAYAR BELAJAR -->
     <div id="layar-belajar">
         <h1>Mode Belajar Aktif 📖</h1>
         <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
-        <p><i>(Untuk tes cepat tanpa menunggu lama, klik tombol di bawah)</i></p>
+        <p><i>(Untuk simulasi cepat tanpa menunggu lama, klik tombol di bawah)</i></p>
         <button class="btn-belajar" onclick="munculkanGame()">Simulasi Waktu Habis ⏱️</button>
     </div>
 
-    <!-- LAYAR GAME -->
     <div id="layar-game">
         <h1 style="color: #e74c3c;">⚠️ PAHLAWANMU LEMAS! ⚠️</h1>
         <p>Sudah waktunya minum dan istirahat agar pahlawanmu pulih.</p>
-        
         <div class="status-box">
             <h3>[ Ksatria Air ]</h3>
             <p>Kondisi: <span id="char-status" style="color: #e74c3c;">Lemas 😫</span></p>
             <p>HP Kamu: <span id="char-hp">20</span> / 100</p>
         </div>
-        
         <p>Pilih tindakanmu:</p>
         <button class="btn-game btn-minum" onclick="pilihTindakan('minum')">🥤 Minum Air (+40 HP)</button>
         <button class="btn-game btn-istirahat" onclick="pilihTindakan('istirahat')">🛋️ Istirahat (+40 HP)</button>
     </div>
 
-    <!-- LOGIKA JAVASCRIPT -->
     <script>
         let hp = 20; 
         const waktuTunggu = 30 * 60 * 1000; 
+
+        window.onload = function() {
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
+        };
 
         function munculkanGame() {
             hp = 20; 
@@ -44,6 +43,24 @@
             document.getElementById("char-status").innerText = "Lemas 😫";
             document.getElementById("char-status").style.color = "#e74c3c";
             document.getElementById("layar-game").style.display = "block";
+
+            if (Notification.permission === "granted") {
+                new Notification("🚨 Hydration Hero", {
+                    body: "Pahlawanmu Lemas! Waktunya minum air dan istirahat sejenak.",
+                    icon: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4a7.png"
+                });
+            }
+            playBeepSound();
+        }
+
+        function playBeepSound() {
+            let context = new (window.AudioContext || window.webkitAudioContext)();
+            let osc = context.createOscillator();
+            osc.type = "sine";
+            osc.frequency.value = 600; 
+            osc.connect(context.destination);
+            osc.start();
+            setTimeout(() => osc.stop(), 300); 
         }
 
         setInterval(munculkanGame, waktuTunggu);
@@ -68,6 +85,5 @@
             }
         }
     </script>
-
 </body>
 </html>
