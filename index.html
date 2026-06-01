@@ -8,7 +8,7 @@
        
         body {
             font-family: 'Courier New', Courier, monospace; 
-            background-color: navy; /* Latar belakang utama diganti Navy */
+            background-color: navy; 
             color: white; 
             text-align: center;
             margin: 0;
@@ -71,7 +71,7 @@
 
  
     
-    <!-- 1. LAYAR BELAJAR -->
+   <audio id="suaraku" src="suaraku.mp3" preload="auto" loop></audio>
     <div id="layar-belajar">
         <h1>Mode Belajar Aktif 📖</h1>
         <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
@@ -118,9 +118,10 @@
                     body: "Pahlawanmu Lemas! Waktunya minum air dan istirahat sejenak.",
                     icon: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4a7.png"
                 });
-            }
+            
 
-            playBeepSound();
+            let lagu = document.getElementById("suaraku");
+    lagu.play();;
         }
 
         function playBeepSound() {
