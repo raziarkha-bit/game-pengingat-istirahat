@@ -1,5 +1,5 @@
 body {
-    font-family: 'Courier New', Courier, monospace; /* Gaya huruf retro ala game RPG */
+    font-family: 'Courier New', Courier, monospace;
     background-color: #2c3e50;
     color: #ecf0f1;
     text-align: center;
@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* 1. Style untuk Layar Belajar (Halaman Utama) */
 #layar-belajar {
     padding: 100px 20px;
 }
@@ -23,20 +22,18 @@ body {
     font-weight: bold;
 }
 
-/* 2. Style untuk Layar Game Pop-up */
 #layar-game {
-    display: none; /* Sembunyi di awal, muncul saat timer habis */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); /* Latar belakang hitam pekat */
+    background-color: rgba(0, 0, 0, 0.95);
     padding-top: 100px;
     z-index: 999;
 }
 
-/* Kotak Status Karakter RPG */
 .status-box {
     border: 3px solid #ecf0f1;
     width: 300px;
@@ -45,7 +42,6 @@ body {
     background-color: #34495e;
 }
 
-/* Tombol Tindakan di Dalam Game */
 .btn-game {
     padding: 10px 20px;
     font-size: 16px;
@@ -55,13 +51,5 @@ body {
     border-radius: 3px;
     font-weight: bold;
 }
-
-.btn-minum { 
-    background-color: #2980b9; 
-    color: white; 
-}
-
-.btn-istirahat { 
-    background-color: #d35400; 
-    color: white; 
-}
+.btn-minum { background-color: #2980b9; color: white; }
+.btn-istirahat { background-color: #d35400; color: white; }
