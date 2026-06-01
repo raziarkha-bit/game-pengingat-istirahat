@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: navy; 
+    background-color: navy !important; /* Memaksa background utama menjadi Navy */
     color: white;
     text-align: center;
     margin: 0;
@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black; 
+    background-color: black !important; /* Memaksa layar game penuh menjadi Hitam pekat */
     padding-top: 100px;
     z-index: 999;
 }
@@ -41,7 +41,7 @@ body {
     width: 300px;
     margin: 20px auto;
     padding: 15px;
-    background-color: blue; 
+    background-color: blue !important; /* Memaksa kotak status menjadi Biru */
 }
 
 .btn-game {
@@ -54,12 +54,5 @@ body {
     font-weight: bold;
 }
 
-.btn-minum { 
-    background-color: dodgerblue; 
-    color: white; 
-}
-
-.btn-istirahat { 
-    background-color: orangered; 
-    color: white; 
-}
+.btn-minum { background-color: dodgerblue; color: white; }
+.btn-istirahat { background-color: orangered; color: white; }
