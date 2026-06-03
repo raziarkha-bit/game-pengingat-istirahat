@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: navy; /* Menggunakan kata warna Navy */
+    background-color: navy;
     color: white;
     text-align: center;
     margin: 0;
